@@ -1,0 +1,33 @@
+name: base_project_pelatihan_mobile_intermediate_polindra
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.4.3+1
+  cached_network_image: ^3.4.1
+  flutter_secure_storage: ^9.2.2
+  get: 4.6.6
+  logger: ^2.3.0
+  rxdart: 0.27.7
+  retrofit: ^4.1.0
+  json_annotation: ^4.8.1
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  retrofit_generator: ^8.1.0
+  build_runner: ^2.4.8
+  json_serializable: ^6.6.2
+
+flutter:
+  generate: true
+  uses-material-design: true
