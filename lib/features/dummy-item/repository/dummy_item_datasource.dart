@@ -4,7 +4,7 @@ import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/e
 class DummyItemDatasource extends BaseDioDataSource {
   DummyItemDatasource(super._client);
 
-  Future<String> apiDummyItem(String? id) {
+  Future<String> apiDummyItem(String? id) async {
     String path = 'lookup.php';
     Map<String, dynamic> queryParameters = {'i': int.parse(id ?? "")};
 

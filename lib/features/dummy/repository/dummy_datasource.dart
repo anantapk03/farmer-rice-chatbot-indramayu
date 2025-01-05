@@ -4,7 +4,7 @@ import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/e
 class DummyDatasource extends BaseDioDataSource {
   DummyDatasource(super._client);
 
-  Future<String> apiDummy() {
+  Future<String> apiDummy() async {
     String path = 'search.php';
     Map<String, dynamic> queryParameters = {'f': 'b'};
 

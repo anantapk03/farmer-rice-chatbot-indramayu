@@ -11,6 +11,7 @@ import '../../main.dart';
 class AppRoute {
   static const String defaultRoute = '/';
   static const String detailScreen = '/detailScreen';
+  static const String notFound = '/notFound';
 
   static List<GetPage> pages = [
     GetPage(
