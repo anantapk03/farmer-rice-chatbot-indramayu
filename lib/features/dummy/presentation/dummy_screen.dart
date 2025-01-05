@@ -47,16 +47,60 @@ class _DummyScreenState extends State<DummyScreen> {
         child: Text("Empty"),
       );
     }
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-          child: DummyItemWidget(
-            dummyItemModel: listDummy.meals?[index],
+    return Obx(() {
+      return ListView.builder(
+        itemBuilder: (context, index) {
+          return Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: DummyItemWidget(
+              dummyItemModel: listDummy.meals?[index],
+            ),
+          );
+        },
+        itemCount:
+            _controller.isShowMore.value ? 3 : listDummy.meals?.length ?? 0,
+      );
+    });
+  }
+
+  Widget _body(DummyModel? listDummy) {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+              height: MediaQuery.sizeOf(context).height / 1.25,
+              child: _listViewBuilder(listDummy)),
+          const SizedBox(
+            height: 8,
           ),
-        );
-      },
-      itemCount: listDummy.meals?.length ?? 0,
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Obx(() {
+              return GestureDetector(
+                onTap: () =>
+                    _controller.isShowMoreData(_controller.isShowMore.value),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                    color: Colors.grey, // Warna latar belakang
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: Text(
+                    _controller.isShowMore.value ? "Show More" : "Show Less",
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              );
+            }),
+          ),
+        ],
+      ),
     );
   }
 
@@ -72,7 +116,7 @@ class _DummyScreenState extends State<DummyScreen> {
           return const Center(child: Text("Failed to load data"));
         }
         if (state is DummyStateSuccess) {
-          return _listViewBuilder(state.listDummy);
+          return _body(state.listDummy);
         }
 
         return const Center(

@@ -10,6 +10,10 @@ class DummyController extends GetxController {
   final Logger _logger = Logger();
   DummyController(this._repository);
 
+  // Showmore or Showless
+
+  RxBool isShowMore = false.obs;
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -29,5 +33,13 @@ class DummyController extends GetxController {
     }, onDone: () {
       update();
     }));
+  }
+
+  void isShowMoreData(bool value) {
+    if (isShowMore.value) {
+      isShowMore.value = false;
+    } else {
+      isShowMore.value = true;
+    }
   }
 }
