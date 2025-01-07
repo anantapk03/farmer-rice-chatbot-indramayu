@@ -4,6 +4,8 @@ import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/dum
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/dummy-item/presentation/dummy_item_screen.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/dummy/binding/dummy_binding.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/dummy/presentation/dummy_screen.dart';
+import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/list_club/binding/list_club_binding.dart';
+import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/list_club/presentation/list_club_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../../main.dart';
@@ -16,8 +18,8 @@ class AppRoute {
   static List<GetPage> pages = [
     GetPage(
         name: defaultRoute,
-        page: () => const DummyScreen(),
-        binding: DummyBinding()),
+        page: () => const ListClubScreen(),
+        binding: ListClubBinding()),
     GetPage(
         name: detailScreen,
         page: () => const DummyItemScreen(),
