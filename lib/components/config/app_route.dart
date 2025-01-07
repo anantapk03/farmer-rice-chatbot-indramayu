@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import
 
+import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/detail_club/binding/detail_club_binding.dart';
+import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/detail_club/presentation/detail_club_screen.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/dummy-item/binding/dummy_item_binding.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/dummy-item/presentation/dummy_item_screen.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/dummy/binding/dummy_binding.dart';
@@ -12,6 +14,7 @@ import '../../main.dart';
 
 class AppRoute {
   static const String defaultRoute = '/';
+  static const String detailClub = "/detailClub";
   static const String detailScreen = '/detailScreen';
   static const String notFound = '/notFound';
 
@@ -23,6 +26,10 @@ class AppRoute {
     GetPage(
         name: detailScreen,
         page: () => const DummyItemScreen(),
-        binding: DummyItemBinding())
+        binding: DummyItemBinding()),
+    GetPage(
+        name: detailClub,
+        page: () => const DetailClubScreen(),
+        binding: DetailClubBinding())
   ];
 }
