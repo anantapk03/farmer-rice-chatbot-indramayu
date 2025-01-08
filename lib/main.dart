@@ -3,17 +3,14 @@ import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/c
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/config/app_style.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/sevices/app_service.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/util/storage_util.dart';
+import 'package:base_project_pelatihan_mobile_intermediate_polindra/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // final database = AppDatabase();
-  //
-  // List<FavoriteClub> listFavoriteClub =
-  //     await database.select(database.favoriteClubs).get();
-  //
-  // Logger().i("Total data favorite clubs : ${listFavoriteClub.length}");
+  final NotificationService notificationService = NotificationService();
+  await notificationService.initNotification();
   await _dependencyInjection();
   runApp(const MyApp());
 }

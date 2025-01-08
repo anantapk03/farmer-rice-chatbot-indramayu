@@ -2,6 +2,7 @@ import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/c
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/sevices/database/database.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/detail_club/presentation/detail_club_state.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/list_club/model/item_club_model.dart';
+import 'package:base_project_pelatihan_mobile_intermediate_polindra/notification_service.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 
@@ -13,6 +14,8 @@ class DetailClubController extends GetxController {
   AppDatabase database = AppDatabase();
 
   final Logger _logger = Logger();
+
+  final NotificationService notificationService = NotificationService();
 
   @override
   void onInit() async {
@@ -65,6 +68,9 @@ class DetailClubController extends GetxController {
           .then((_) {
         isFavorite.value = false;
         _logger.i("Success delete as favorite");
+        notificationService.showNotification(
+            title: "New Favorite!",
+            body: "${itemClubModel.strTeam} deleted in your favorite data");
       }).catchError((error) {
         _logger.e("Failed to delete favorite: $error");
       });
@@ -79,6 +85,9 @@ class DetailClubController extends GetxController {
       isFavorite.value = true;
 
       _logger.i("Success set as favorite");
+      notificationService.showNotification(
+          title: "New Favorite!",
+          body: "${itemClubModel.strTeam} set as Favorite");
     }
   }
 }

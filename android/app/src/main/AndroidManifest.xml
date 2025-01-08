@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <application
         android:label="base_project_pelatihan_mobile_intermediate_polindra"
         android:name="${applicationName}"
@@ -25,6 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.receivers.ScheduledNotificationReceiver" />
+
+        <!-- Required for background notifications -->
+        <receiver android:exported="true" android:name="com.dexterous.flutterlocalnotifications.receivers.ActionBroadcastReceiver" />
+        <receiver android:exported="true" android:name="com.dexterous.flutterlocalnotifications.receivers.DismissedReceiver" />
+
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data
