@@ -9,7 +9,7 @@ class ListClubController extends GetxController {
 
   ListClubController(this._repository);
 
-  Logger _logger = Logger();
+  final Logger _logger = Logger();
 
   ListClubState listClubState = ListClubStateIdle();
 
