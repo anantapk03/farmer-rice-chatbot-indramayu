@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756566633281",
+    "project_id": "football-club-app-be49d",
+    "storage_bucket": "football-club-app-be49d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756566633281:android:972372c8a1d359a81ecfc0",
+        "android_client_info": {
+          "package_name": "com.example.base_project_pelatihan_mobile_intermediate_polindra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmhg5K0BHNqTh81PCBXS3F2UwNjVkGYx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
