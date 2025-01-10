@@ -13,6 +13,7 @@ ItemClubModel _$ItemClubModelFromJson(Map<String, dynamic> json) =>
       json['strDescriptionEN'] as String?,
       json['strBadge'] as String?,
       json['strStadium'] as String?,
+      json['strLocation'] as String?,
     );
 
 Map<String, dynamic> _$ItemClubModelToJson(ItemClubModel instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$ItemClubModelToJson(ItemClubModel instance) =>
       'strDescriptionEN': instance.strDescriptionEN,
       'strBadge': instance.strBadge,
       'strStadium': instance.strStadium,
+      'strLocation': instance.strLocation,
     };

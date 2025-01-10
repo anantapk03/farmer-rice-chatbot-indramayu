@@ -6,6 +6,11 @@
         android:label="base_project_pelatihan_mobile_intermediate_polindra"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!-- TODO: Add your Google Maps API key here -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDg-o2RhibO2oU802E_Y7fA1ZuCSOrgfwc"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

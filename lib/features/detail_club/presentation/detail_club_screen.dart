@@ -1,4 +1,5 @@
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/config/app_const.dart';
+import 'package:base_project_pelatihan_mobile_intermediate_polindra/components/config/app_route.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/detail_club/presentation/detail_club_controller.dart';
 import 'package:base_project_pelatihan_mobile_intermediate_polindra/features/detail_club/presentation/detail_club_state.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -71,12 +72,15 @@ class _DetailClubScreenState extends State<DetailClubScreen> {
                 ),
                 const SizedBox(height: 8),
                 // Tipe Makanan
-                Text(
-                  _controller.itemClubModel.strStadium ?? "Name of Stadium",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.grey[600],
+                GestureDetector(
+                  onTap: () => Get.toNamed(AppRoute.detailLocation),
+                  child: Text(
+                    _controller.itemClubModel.strStadium ?? "Name of Stadium",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.grey[600],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),

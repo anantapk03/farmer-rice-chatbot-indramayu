@@ -41,6 +41,11 @@ Future<void> _notificationConfiguration() async {
       Logger().i('FCM Token: $token');
     }
   });
+
+  FirebaseMessaging.onMessage.listen((onData) {
+    NotificationService().showNotification(
+        title: onData.notification?.title, body: onData.notification?.body);
+  });
 }
 
 /// ====== DI Section =====
